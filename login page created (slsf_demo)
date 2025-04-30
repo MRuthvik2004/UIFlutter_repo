@@ -1,0 +1,145 @@
+import 'package:flutter/material.dart';
+ 
+ void main() {
+   runApp(const MyApp());
+ }
+ 
+ // Stateless widget for overall app
+ class MyApp extends StatelessWidget {
+   const MyApp({super.key});
+ 
+   @override
+   Widget build(BuildContext context) {
+     return MaterialApp(
+     return const MaterialApp(
+       title: 'Layout Demo',
+       home: Scaffold(
+         appBar: AppBar(
+           title: const Text('Demonstration of UI Flutter Layout'),
+         ),
+         body: Center(
+           child: Container(
+             color: Colors.white,
+             padding: const EdgeInsets.all(8.0),
+             child: GridView.count(
+               crossAxisCount: 2,
+               crossAxisSpacing: 8,
+               mainAxisSpacing: 8,
+               children: [
+                 Container(
+                   color: Colors.red,
+                   child: Row(
+                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                     children: const [
+                       Icon(Icons.add_road_sharp),
+                       Icon(Icons.access_alarms),
+                       Icon(Icons.ac_unit_outlined),
+                       Icon(Icons.add_alert_sharp),
+                     ],
+                   ),
+                 ),
+                 Container(color: Colors.blue,
+                   child: Column(
+                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                     children: const [
+                       Icon(Icons.add_road_sharp),
+                       Icon(Icons.access_alarms),
+                       Icon(Icons.ac_unit_outlined),
+                       Icon(Icons.add_alert_sharp),
+                     ],
+                   ),
+       home: LoginPage(), // Stateful widget used here
+     );
+   }
+ }
+ 
+ // Stateful widget for login page
+ class LoginPage extends StatefulWidget {
+   const LoginPage({super.key});
+ 
+   @override
+   State<LoginPage> createState() => _LoginPageState();
+ }
+ 
+ class _LoginPageState extends State<LoginPage> {
+   String username = '';
+   String password = '';
+ 
+   @override
+   Widget build(BuildContext context) {
+     return Scaffold(
+       appBar: AppBar(
+         title: const Text('LOGIN PAGE'),
+       ),
+       body: Center(
+         child: Container(
+           height: 500.0,
+           width: 400.0,
+           padding: const EdgeInsets.all(20),
+           decoration: BoxDecoration(
+             color: Colors.yellow[100],
+             borderRadius: BorderRadius.circular(16),
+           ),
+           child: Column(
+ 
+             mainAxisAlignment: MainAxisAlignment.center,
+             children: const [
+               Text("LOGIN", style: TextStyle(fontSize: 30,decoration: TextDecoration.underline),),
+               TextField(
+                 decoration: InputDecoration(
+                   labelText: 'USER NAME',
+                   icon: Icon(Icons.email_outlined),
+                   border: OutlineInputBorder(),
+                 ),
+                 Container(
+                   color: Colors.green,
+                   child: Stack(
+                     alignment: Alignment.center,
+                     children: [
+                       Positioned(
+                         top: 50,
+                         left: 50,
+                         child: Icon(Icons.add_road_sharp),
+                       ),
+                       Positioned(
+                         top: 100,
+                         right: 50,
+                         child: Icon(Icons.add_alert_sharp),
+                       ),
+                       Positioned(
+                         bottom: 50,
+                         left: 100,
+                         child: Icon(Icons.access_alarms),
+                       ),
+                       Positioned(
+                         bottom: 100,
+                         right: 100,
+                         child: Icon(Icons.accessible),
+                       ),
+                     ],
+                   ),
+               ),
+               SizedBox(height: 20),
+               TextField(
+                 obscureText: true,
+                 decoration: InputDecoration(
+                   labelText: 'PASSWORD',
+                   icon: Icon(Icons.password_outlined),
+                   border: OutlineInputBorder(),
+                 ),
+                 Container(color: Colors.yellow),
+               ],
+             ),
+               ),
+               SizedBox(height: 30),
+               ElevatedButton(
+                 onPressed: null, // No functionality as requested
+                 child: Text('LOGIN'),
+               ),
+             ],
+           ),
+         ),
+       ),
+     );
+   }
+ }
